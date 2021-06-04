@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/gitPagueReac/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/gitPagueReac/static/js/main.27790e1b.chunk.js",
+    "main.js.map": "/gitPagueReac/static/js/main.27790e1b.chunk.js.map",
+    "runtime-main.js": "/gitPagueReac/static/js/runtime-main.f2825995.js",
+    "runtime-main.js.map": "/gitPagueReac/static/js/runtime-main.f2825995.js.map",
+    "static/js/2.575f9c95.chunk.js": "/gitPagueReac/static/js/2.575f9c95.chunk.js",
+    "static/js/2.575f9c95.chunk.js.map": "/gitPagueReac/static/js/2.575f9c95.chunk.js.map",
+    "static/js/3.772af463.chunk.js": "/gitPagueReac/static/js/3.772af463.chunk.js",
+    "static/js/3.772af463.chunk.js.map": "/gitPagueReac/static/js/3.772af463.chunk.js.map",
+    "index.html": "/gitPagueReac/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/gitPagueReac/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.575f9c95.chunk.js.LICENSE.txt": "/gitPagueReac/static/js/2.575f9c95.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/gitPagueReac/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2825995.js",
+    "static/js/2.575f9c95.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.27790e1b.chunk.js"
+  ]
+}
