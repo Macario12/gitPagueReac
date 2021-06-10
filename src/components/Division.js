@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 export default class Division extends Component {
     render() {
@@ -14,8 +15,9 @@ export default class Division extends Component {
                     </Card.Content>
                     <Card.Content extra>
                     <a>
-                        <Icon className='angle double right icon' />
-                        IR
+                        <Icon className='angle double right icon'>
+                            <Link to="/gitPagueReac/estructura">IR</Link>
+                         </Icon>
                     </a>
                     </Card.Content>
                 </Card>
