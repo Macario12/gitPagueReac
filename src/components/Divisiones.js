@@ -25,6 +25,12 @@ export default class Divisiones extends Component {
                     <Division title="lista circular simple" descripcion="this a description" color='blue' imagen="https://s6.gifyu.com/images/A-4.gif"/>
                     <Division title="lista circular doble" descripcion="this a description" color='violet' imagen="https://s6.gifyu.com/images/A-3.gif"/>
 
+                    <Division title="Pila" descripcion="this a description" color='green' imagen="https://s6.gifyu.com/images/Pila.gif"/>
+                    <Division title="Cola" descripcion="this a description" color='yellow' imagen="https://s6.gifyu.com/images/Cola.gif"/>
+                    <Division title="Cola de Prioridad" descripcion="this a description" color='blue' imagen="https://s6.gifyu.com/images/Cola-de-Prioridad.gif"/>
+                    <Division title="arbol x" descripcion="this a description" color='violet' imagen=""/>
+
+
                     <Division title="arbol 1" descripcion="this a description"/>
                     <Division title="arbol 2" descripcion="this a description"/>
                     <Division title="arbol 3" descripcion="this a description"/>
