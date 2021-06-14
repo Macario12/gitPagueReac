@@ -7,19 +7,22 @@ import Actualizar from './Actualizar'
 import {Link} from 'react-router-dom'
 import Dibujar from './Dibujar';
 import Buscar from './Buscar'
-
+import Grafica from './GraficaListas'
+let count = 0;
 export default class NavbarInter extends Component {
     state = {
       estrutura : null,
       nombre: ''
      }
 
+
+    
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
      
-    obtenerDatos = (estructura,nombre) =>{
+    obtenerDatos = (edd,nombreestruc) =>{
       this.setState({
-        estrutura: estructura,
-        nombre: nombre
+        estrutura: edd,
+        nombre: nombreestruc
       })
     }
 
@@ -37,7 +40,7 @@ export default class NavbarInter extends Component {
                 <Menu.Item>
                             <Link to="/gitPagueReac/">TytusDS</Link>
                 </Menu.Item>
-                <Cargar obtenerDatos={this.obtenerDatos} imprimir={this.imprimir} />
+                <Cargar obtenerDatos={this.obtenerDatos} imprimir={this.imprimir} key={count++} />
                 <Agregar/>
                 <Eliminar/>
                 <Actualizar/>
@@ -57,7 +60,7 @@ export default class NavbarInter extends Component {
                 <Menu.Item>
                             <Link to="/gitPagueReac/">TytusDS</Link>
                 </Menu.Item>
-                <Cargar obtenerDatos={this.obtenerDatos} imprimir={this.imprimir} />
+                <Cargar obtenerDatos={this.obtenerDatos} imprimir={this.imprimir}  key={count++}/>
                 <Agregar/>
                 <Eliminar/>
                 <Actualizar/>
@@ -68,7 +71,10 @@ export default class NavbarInter extends Component {
                 
               </Menu.Menu>
             </Menu>
-            <Dibujar nombre={this.state.nombre} estructura={this.state.estrutura}/>
+            <br/>
+             <h1>{this.state.nombre}</h1>
+             {/* <h3>{this.state.estructura.Imprimir()}</h3> */}
+            <Dibujar nombre={this.state.nombre} estructura={this.state.estrutura}  key={count++}/>
           </div>
         )
       }

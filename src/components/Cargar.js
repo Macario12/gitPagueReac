@@ -20,17 +20,38 @@ function structW(nombre,datos){ // FUNCION PARA SABER QUE TIPO DE ESTRUCTURA ES.
     switch(nombre){
         case "Pila" :
             edd = new Cola();
-            datos.map(e => edd.Push(e))
+            edd.cargar(datos)
             break
         case "Cola":
 
             edd = new Cola();
-            datos.map(e => edd.Push(e))
+            edd.cargar(datos)
             console.log(edd.Imprimir())
             break
+        case "Lista doblemente":
+
+            edd = new Cola();
+            edd.cargar(datos)
+            console.log(edd.Imprimir())
+        break
+
+        case "Lista circular doblemente Enlazada":
+
+            edd = new Cola();
+            edd.cargar(datos)
+            console.log(edd.Imprimir())
+        break
+
+        case "Lista circular simplemente Enlazada":
+
+            edd = new Cola();
+            edd.cargar(datos)
+            console.log(edd.Imprimir())
+        break
     }
     propsG.obtenerDatos(edd,nombre);
 }
+
 
 export default function Cargar(props) {
     propsG = props
