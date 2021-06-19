@@ -1,30 +1,34 @@
 import React, { Component } from 'react'
 import GraficaListas from './GraficaListas'
 import GraficaListaCircular from './GraficaListaCircular'
+import GraficoOrdenamientos from './GraficoOrdenamientos'
 
 export default class Dibujar extends Component {
   render() {
-     if(this.props.nombre == "Lista circular simplemente Enlazada" || this.props.nombre == "Lista circular doblemente Enlazada"){
+     if(this.props.nombre == "Lista circular simplemente enlazada" || this.props.nombre == "Lista circular doblemente enlazada"){
       return (
         <div>
-            <GraficaListaCircular nombre={this.props.nombre} edd={this.props.estructura}/>
+            <GraficaListaCircular nombre={this.props.nombre} buscar={this.props.valorBusqueda} edd={this.props.estructura}/>
         </div>
       )
-    }else{
-      return (
+    
+    }else if(this.props.nombre == "Ordenamiento Selección" ||
+    this.props.nombre == "Ordenamiento Inserción" ||
+    this.props.nombre == "Ordenamiento Burbuja" ||
+    this.props.nombre == "Ordenamiento Rapido"){
+      return(
         <div>
-             <GraficaListas nombre={this.props.nombre} edd={this.props.estructura}/> 
+        <br/>
+        <GraficoOrdenamientos arreglo={this.props.estructura}/> 
         </div>
-      )
+      ) 
     }
-
-    /* return(
-      <div>
-      <br/>
-      <h1>{this.props.nombre}</h1>
-      <h3>{this.props.estructura.Imprimir()}</h3>
-      <GraficaListas nombre={this.props.nombre} edd={this.props.estructura}/> 
-      </div>
-    ) */
+    else{
+      return (
+        <div>
+             <GraficaListas nombre={this.props.nombre}  buscar={this.props.valorBusqueda} edd={this.props.estructura}/> 
+        </div>
+      )
+    } 
   }
 }

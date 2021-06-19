@@ -1,16 +1,17 @@
 import React from 'react'
 import Graph from "react-graph-vis";
 
-export default function GraficaListas(props) {
+export default function GraficarArbol(props) {
 
-    let nodosAfuera = props.edd.Recorrido()
+    let nodosAfuera = props.estructura.obtenerNodos()
+
     if(props.buscar != ""){
-      nodosAfuera = props.edd.Recorrido(props.buscar)
+      nodosAfuera = props.estructura.obtenerNodos(props.valorBusqueda)
     }
-    let uniones = edgeF()
 
+    let uniones =  props.estructura.obtenerAputadores()
 
-    function edgeF(){
+  /*   function edgeF(){
       let edgefuera = []
       for (let i = 0; i < nodosAfuera.length-1; i++) {
         let edge = {from:i, to:i+1}
@@ -29,39 +30,40 @@ export default function GraficaListas(props) {
       }
 
       return edgefuera
-    }
+    } */
 
-    console.log(nodosAfuera)
-    console.log(uniones)
+    /* console.log(nodosAfuera)
+    console.log(uniones) */
 
     const graph = {
-        nodes: nodosAfuera.map((node, index, arr) => {
-          const angle = 2 * (index / arr.length +0.75 );
-          node.x = 9000 * angle;
-          node.y = 10 * angle;
-          if (index % 2 === 0) {
-            node.value = index + 1;
-          }
-          return node;
-        }),
+        nodes: nodosAfuera,
 
         edges: uniones
       };
      
 
-
-
-      const diseño = {
-          direction: 'LR'
-      }
-
       const options = {
+        layout: {
+            hierarchical: {
+              direction: "UD",
+              sortMethod: "directed",
+            },
+        },
         physics: false,
         edges: {
-          color: "#21701a"
+          color: "white",
+          width: 2,
+          shadow: true
         },
         nodes:{
-            shape:"box"
+            shape:"box",
+            color: "red",
+            font: {
+              size: 32,
+              color: "#ffffff",
+            },
+            borderWidth: 2,
+            shadow: true
         },
         interaction: {
           navigationButtons: true,

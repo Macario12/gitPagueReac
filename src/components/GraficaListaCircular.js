@@ -4,6 +4,9 @@ import Graph from "react-graph-vis";
 export default function GraficaListaCircular(props) {
 
     let nodosAfuera = props.edd.Recorrido()
+    if(props.buscar != ""){
+      nodosAfuera = props.edd.Recorrido(props.buscar)
+    }
     let edgefuera =[]
 
     for (let i = 0; i < nodosAfuera.length-1; i++) {

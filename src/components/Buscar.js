@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Button, Header, Icon, Modal,Menu,Input } from 'semantic-ui-react'
 
-export default function Buscar() {
-    const [open, setOpen] = React.useState(false)
-    return (
-        <Modal
+export default class Buscar extends Component {
+    state={
+        open: false,
+        textoDato: "" 
+    }
+
+    retornarValor = () =>{
+        this.props.busqueda(this.state.textoDato)
+    }
+
+    obtenerText = e =>{
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    render() {
+        return (
+            <Modal
             basic
-            onClose={() => setOpen(false)}
-            onOpen={() => setOpen(true)}
-            open={open}
+            onClose={() =>  this.setState({open: false})}
+            onOpen={() =>  this.setState({open: true})}
+            open={this.state.open}
             size='small'
             trigger={<Menu.Item>Buscar</Menu.Item>}
             >
@@ -17,16 +32,18 @@ export default function Buscar() {
                 Buscar Dato
             </Header>
             <Modal.Content>
-                    <Input type="text" fluid placeholder="buscar dato" icon="search"/>
+                    <Input type="text" fluid name='textoDato' value={this.state.textoDato} onChange={this.obtenerText} placeholder="buscar dato" icon="search"/>
             </Modal.Content>
             <Modal.Actions>
-                <Button basic color='red' inverted onClick={() => setOpen(false)}>
+                <Button basic color='red' inverted onClick={() =>  this.setState({open: false})}>
                 <Icon name='remove' /> No
                 </Button>
-                <Button color='green' inverted onClick={() => setOpen(false)}>
+                <Button color='green' inverted onClick={this.retornarValor}>
                 <Icon name='checkmark' /> Yes
                 </Button>
             </Modal.Actions>
             </Modal>
-    )
+        )
+    }
 }
+
